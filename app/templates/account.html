@@ -1,0 +1,17 @@
+<h2>Account</h2>
+<div class='row'>
+	<div class='col-md-12'>
+		{{account.account().name}} - {{account.account().user_count}}
+		<h3>Users</h3>
+		<div class='list-group'>
+			 <div class='list-group-item' ng-repeat='u in account.account().users'>
+				 {{u.username}}
+			 </div>
+		</div>
+		<form>
+			<input type='text' ng-model='newuser.username'>
+			<input type='password' ng-model='newuser.password'>
+			<button class='btn btn-primary' ng-click='account.add_user(newuser)'>Add</button>
+		</form>
+	</div>
+</div>
