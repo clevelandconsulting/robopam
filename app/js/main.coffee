@@ -1,1 +1,1 @@
-angular.module('app',['ngRoute', 'ui.bootstrap', 'firebase', 'LocalStorageModule'])
+angular.module('app',['ngRoute', 'mm.foundation', 'firebase', 'LocalStorageModule'])

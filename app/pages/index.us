@@ -6,8 +6,25 @@
     <link rel="stylesheet" type="text/css" href="<%= css %>" media="all" />
   </head>
   <body>
-	   <div class='container' ng-view>
-	   </div>
-    <script type="text/javascript" src="<%= js %>"></script>
+	  <div ng-controller='NavController as nav'>
+	   <top-bar>
+	    <ul class='title-area'>
+		    <li class='name'>
+		     <h1><a href='/'>Robopam</a></h1>
+		    </li>
+		    <li toggle-top-bar class="menu-icon"><a href="#">Menu</a></li>
+	    </ul>
+	    
+	    <top-bar-section>
+	     <ul class='left'>
+		     <li><a href='' ng-click='nav.logout()'>Logout</a>
+		     </li>
+	     </ul>
+	    </top-bar-section>
+	   </top-bar>
+	  </div>
+	  <div class='container' ng-view>
+	  </div>
+   <script type="text/javascript" src="<%= js %>"></script>
   </body>
 </html>

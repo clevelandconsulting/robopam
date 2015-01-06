@@ -1,14 +1,14 @@
-<h2>Accounts</h2>
 <div class='row'>
+	<h2>Accounts</h2>
 	<div class='col-md-12'>
-		<div class='list-group'>
-			 <div class='list-group-item' ng-repeat='u in account.accounts()'>
+		<ul>
+			 <li ng-repeat='u in account.accounts()'>
 				 <a href='' ng-click='account.select(u)'>{{u.name}} ({{u.user_count}})</a>
-			 </div>
-		</div>
+			 </li>
+		</ul>
 		<form>
-			<input type='text' ng-model='newaccount.name'>
-			<input type='number' ng-model='newaccount.user_count'>
+			<input type='text' ng-model='newaccount.name' placeholder="Account Name">
+			<input type='number' ng-model='newaccount.user_count' placeholder="User Count">
 			<button class='btn btn-primary' ng-click='account.add(newaccount)'>Add</button>
 		</form>
 	</div>

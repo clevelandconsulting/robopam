@@ -1,17 +1,22 @@
-<h2>Account</h2>
 <div class='row'>
-	<div class='col-md-12'>
+ <h2>Account</h2>
 		{{account.account().name}} - {{account.account().user_count}}
 		<h3>Users</h3>
+		<ul>
+			 <li ng-repeat='u in account.users'>
+				 {{u.email}} | <a href='' ng-click='account.deactivate(u)'>DeActivate</a>
+			 </li>
+		</ul>
+		
+		<h3>New Users</h3>
 		<div class='list-group'>
-			 <div class='list-group-item' ng-repeat='u in account.account().users'>
-				 {{u.username}}
+			 <div class='list-group-item' ng-repeat='u in account.new_users'>
+				 {{u.email}} | {{ u.$id }} | <a href='' ng-click='account.remove_newuser(u)'>Delete</a>
 			 </div>
 		</div>
 		<form>
-			<input type='text' ng-model='newuser.username'>
-			<input type='password' ng-model='newuser.password'>
+			<div class='columns small-6'><input type='text' ng-model='newuser.email' placeholder="Email"></div>
+			<div class='columns small-6'><input type='password' ng-model='newuser.password' placeholder="Password"></div>
 			<button class='btn btn-primary' ng-click='account.add_user(newuser)'>Add</button>
 		</form>
-	</div>
 </div>

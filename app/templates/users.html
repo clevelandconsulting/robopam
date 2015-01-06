@@ -1,15 +1,10 @@
-<h2>Users</h2>
 <div class='row'>
+ <h2>Users</h2>
 	<div class='col-md-12'>
-		<div class='list-group'>
-			 <div class='list-group-item' ng-repeat='u in user.users()'>
-				 {{u.email}}
-			 </div>
-		</div>
-		<form>
-			<input type='email' ng-model='newuser.email'>
-			<input type='password' ng-model='newuser.password'>
-			<button class='btn btn-primary' ng-click='user.add(newuser)'>Add</button>
-		</form>
+		<ul>
+			 <li ng-repeat='u in user.users()'>
+				 {{user.email(u)}}
+			 </li>
+		</ul>
 	</div>
 </div>

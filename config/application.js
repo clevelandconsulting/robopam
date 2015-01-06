@@ -50,6 +50,7 @@ module.exports = function(lineman) {
 			     loadPath: [
 			     	"vendor/css",
 			     	"vendor/bower/bootstrap-sass-official/assets/stylesheets",
+			     	"vendor/bower/foundation/scss",
 			     	"app/css"
 			     ]
 		     }

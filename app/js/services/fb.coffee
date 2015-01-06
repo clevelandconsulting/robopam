@@ -1,4 +1,4 @@
-angular.module('app').service 'fb', ['api', '$firebase',
+angular.module('app').service 'FB', ['api', '$firebase',
  class fb
   constructor: (@api, @firebase) ->
   
@@ -7,9 +7,10 @@ angular.module('app').service 'fb', ['api', '$firebase',
    if path?
     url = url + path
    new Firebase(url)
-  
+
+ 
   getAll: (ref) ->
-   sync = @firebase(ref)
+   sync = @firebase(ref, {arrayFactory: "FbArray"})
 	  sync.$asArray()
 
   get: (ref,key) ->

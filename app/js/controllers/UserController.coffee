@@ -1,14 +1,12 @@
-angular.module('app').controller 'UserController', ['$scope','UserRepository', 
- class UserController
-  constructor: (@scope, @UserRepository) ->
-   @scope.newuser = {}
+angular.module('app').controller 'UserController', ['$scope', 'UserRepository', 
+ class UserController extends FirebaseViewController
+  constructor: (scope, @UserRepository) ->
+   super(scope)
    
   users: () ->
-   if !@all?
-    @all = @UserRepository.all()
-   @all
-   
-  add: (newuser) ->
-   @all.$add(newuser)
-   newuser = {}
+   @getAll(@UserRepository)
+  
+  email: (user) ->
+   user.email
+
 ]
